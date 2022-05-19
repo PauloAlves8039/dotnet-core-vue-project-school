@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>{{titulo}}</h1>
-    <input type="text" placeholder="Nome do Aluno" v-model="nome">
+    <input type="text" placeholder="Nome do Aluno" v-model="nome"
+    v-on:keyup.enter="addAluno()">
     <table border="1px">
       <thead>
         <th>Mat.</th>
@@ -33,11 +34,22 @@ export default {
   data() {
     return {
       titulo: 'Aluno',
-      nome: 'Alunos',
+      nome: '',
+      alunos: []
     }
   },
-  props: {},
-};
+  props: {
+},
+methods: {
+  addAluno() {
+    this.alunos.push(this.nome);
+    this.alunos.forEach(aluno => {
+      // eslint-disable-next-line no-console
+      console.log(aluno);
+    });
+  }
+},
+}
 </script>
 
 <style scoped>
