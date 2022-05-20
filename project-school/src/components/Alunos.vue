@@ -1,8 +1,12 @@
 <template>
   <div>
-    <h1>{{titulo}}</h1>
-    <input type="text" placeholder="Nome do Aluno" v-model="nome"
-    v-on:keyup.enter="addAluno()">
+    <h1>{{ titulo }}</h1>
+    <input
+      type="text"
+      placeholder="Nome do Aluno"
+      v-model="nome"
+      v-on:keyup.enter="addAluno()"
+    />
     <table border="1px">
       <thead>
         <th>Mat.</th>
@@ -10,16 +14,10 @@
         <th>Opções</th>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Paulo</td>
-          <td>
-            <button class="btn" @click="remover()">Remover</button>
-          </td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Isadora</td>
+        <tr v-for="(aluno, index) in alunos" :key="index">
+          <td>{{ index + 1 }}</td>
+          <!-- <td>{{ aluno.id }}</td> -->
+          <td>{{ aluno.nome }}</td>
           <td>
             <button class="btn" @click="remover()">Remover</button>
           </td>
@@ -33,23 +31,26 @@
 export default {
   data() {
     return {
-      titulo: 'Aluno',
-      nome: '',
-      alunos: []
-    }
+      titulo: "Aluno",
+      nome: "",
+      alunos: [
+        { id: 1, nome: "Paulo" },
+        { id: 2, nome: "Isadora" },
+        { id: 3, nome: "Maria" },
+      ],
+    };
   },
-  props: {
-},
-methods: {
-  addAluno() {
-    this.alunos.push(this.nome);
-    this.alunos.forEach(aluno => {
-      // eslint-disable-next-line no-console
-      console.log(aluno);
-    });
-  }
-},
-}
+  props: {},
+  methods: {
+    addAluno() {
+      let _aluno = {
+        nome: this.nome,
+      };
+      this.alunos.push(_aluno);
+      this.nome = "";
+    },
+  },
+};
 </script>
 
 <style scoped>
