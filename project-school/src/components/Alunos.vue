@@ -19,7 +19,9 @@
           <!-- <td>{{ aluno.id }}</td> -->
           <td>{{ aluno.nome }}</td>
           <td>
-            <button class="btn" @click="remover(aluno)">Remover</button>
+            <button class="btn btn_Danger" @click="remover(aluno)">
+              Remover
+            </button>
           </td>
         </tr>
       </tbody>
