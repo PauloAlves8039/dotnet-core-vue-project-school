@@ -10,17 +10,17 @@
       />
       <button class="btn btnInput" @click="addAluno()">Adicionar</button>
     </div>
-    <table border="1px">
+    <table>
       <thead>
         <th>Mat.</th>
         <th>Nome</th>
         <th>Opções</th>
       </thead>
-      <tbody>
+      <tbody v-if="alunos.length">
         <tr v-for="(aluno, index) in alunos" :key="index">
           <td>{{ index + 1 }}</td>
           <!-- <td>{{ aluno.id }}</td> -->
-          <td>{{ aluno.nome }}</td>
+          <td>{{ aluno.nome }} {{ aluno.sobrenome }}</td>
           <td>
             <button class="btn btn_Danger" @click="remover(aluno)">
               Remover
@@ -28,6 +28,9 @@
           </td>
         </tr>
       </tbody>
+      <tfoot v-else>
+        Nenhum Aluno Encontrado
+      </tfoot>
     </table>
   </div>
 </template>
@@ -39,9 +42,9 @@ export default {
       titulo: "Aluno",
       nome: "",
       alunos: [
-        { id: 1, nome: "Paulo" },
-        { id: 2, nome: "Isadora" },
-        { id: 3, nome: "Maria" },
+        { id: 1, nome: "Paulo", sobrenome: "Alves" },
+        { id: 2, nome: "Isadora", sobrenome: "Ferreira" },
+        { id: 3, nome: "Maria", sobrenome: "José" },
       ],
     };
   },
