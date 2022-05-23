@@ -1,12 +1,15 @@
 <template>
   <div>
     <h1>{{ titulo }}</h1>
-    <input
-      type="text"
-      placeholder="Nome do Aluno"
-      v-model="nome"
-      v-on:keyup.enter="addAluno()"
-    />
+    <div>
+      <input
+        type="text"
+        placeholder="Nome do Aluno"
+        v-model="nome"
+        @keyup.enter="addAluno()"
+      />
+      <button class="btn btnInput" @click="addAluno()">Adicionar</button>
+    </div>
     <table border="1px">
       <thead>
         <th>Mat.</th>
@@ -60,4 +63,23 @@ export default {
 </script>
 
 <style scoped>
+input {
+  border: 0;
+  padding: 20px;
+  font-size: 1.3em;
+  color: #687f7f;
+  display: inline;
+}
+.btnInput {
+  border: 0px;
+  padding: 20px;
+  font-size: 1.3em;
+  display: inline;
+  background-color: rgb(116, 115, 115);
+}
+.btnInput:hover {
+  padding: 20px;
+  margin: 0px;
+  border: 0px;
+}
 </style>
