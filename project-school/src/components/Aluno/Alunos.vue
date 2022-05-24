@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ titulo }}</h1>
+    <titulo texto="Aluno" />
     <div>
       <input
         type="text"
@@ -36,7 +36,12 @@
 </template>
 
 <script>
+import Titulo from "../_share/Titulo.vue";
+
 export default {
+  components: {
+    Titulo,
+  },
   data() {
     return {
       titulo: "Aluno",
