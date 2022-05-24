@@ -46,12 +46,14 @@ export default {
     return {
       titulo: "Aluno",
       nome: "",
-      alunos: [
-        { id: 1, nome: "Paulo", sobrenome: "Alves" },
-        { id: 2, nome: "Isadora", sobrenome: "Ferreira" },
-        { id: 3, nome: "Maria", sobrenome: "José" },
-      ],
+      alunos: [],
     };
+  },
+  created() {
+    this.$http
+      .get("http://localhost:3000/alunos")
+      .then((res) => res.json())
+      .then((alunos) => (this.alunos = alunos));
   },
   props: {},
   methods: {
