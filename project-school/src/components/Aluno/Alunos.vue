@@ -18,8 +18,7 @@
       </thead>
       <tbody v-if="alunos.length">
         <tr v-for="(aluno, index) in alunos" :key="index">
-          <td>{{ index + 1 }}</td>
-          <!-- <td>{{ aluno.id }}</td> -->
+          <td>{{ aluno.id }}</td>
           <td>{{ aluno.nome }} {{ aluno.sobrenome }}</td>
           <td>
             <button class="btn btn_Danger" @click="remover(aluno)">
@@ -47,11 +46,12 @@ export default {
       titulo: "Aluno",
       nome: "",
       alunos: [],
+      url: "http://localhost:3000/alunos",
     };
   },
   created() {
     this.$http
-      .get("http://localhost:3000/alunos")
+      .get(this.url)
       .then((res) => res.json())
       .then((alunos) => (this.alunos = alunos));
   },
@@ -60,13 +60,21 @@ export default {
     addAluno() {
       let _aluno = {
         nome: this.nome,
+        sobrenome: "",
       };
-      this.alunos.push(_aluno);
-      this.nome = "";
+      this.$http
+        .post(this.url, _aluno)
+        .then((res) => res.json())
+        .then((alunoRetornado) => {
+          this.alunos.push(alunoRetornado);
+          this.nome = "";
+        });
     },
     remover(aluno) {
-      let indice = this.alunos.indexOf(aluno);
-      this.alunos.splice(indice, 1);
+      this.$http.delete(`${this.url}/${aluno.id}`).then(() => {
+        let indice = this.alunos.indexOf(aluno);
+        this.alunos.splice(indice, 1);
+      });
     },
   },
 };
