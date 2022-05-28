@@ -32,13 +32,17 @@ export default {
   },
   data() {
     return {
-      Professores: [
-        { id: 1, nome: "Gabriela" },
-        { id: 2, nome: "Pedro" },
-        { id: 3, nome: "Silvana" },
-      ],
+      Professores: [],
+      url: "http://localhost:3000/professores",
     };
   },
+  created() {
+    this.$http
+      .get(this.url)
+      .then((res) => res.json())
+      .then((professor) => (this.Professores = professor));
+  },
+  props: {},
 };
 </script>
 
