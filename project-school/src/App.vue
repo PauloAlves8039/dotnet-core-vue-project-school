@@ -2,7 +2,7 @@
   <div id="app">
     <Nav></Nav>
     <div class="marginPrincipal">
-      <router-view></router-view>
+      <router-view :key="$route.fullPath"></router-view>
     </div>
   </div>
 </template>
@@ -16,9 +16,12 @@ import Nav from "./components/_nav/Nav";
 export default {
   name: "App",
   components: {
+    // eslint-disable-next-line vue/no-unused-components
     Alunos,
+    // eslint-disable-next-line vue/no-unused-components
     Professor,
     Nav,
+    // eslint-disable-next-line vue/no-unused-components
     Sobre,
   },
 };

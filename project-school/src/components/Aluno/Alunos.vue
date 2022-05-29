@@ -44,16 +44,24 @@ export default {
   data() {
     return {
       titulo: "Aluno",
+      professorId: this.$route.params.prof_id,
       nome: "",
       alunos: [],
-      url: "http://localhost:3000/alunos",
+      urlAluno: "http://localhost:3000/alunos",
     };
   },
   created() {
-    this.$http
-      .get(this.url)
-      .then((res) => res.json())
-      .then((alunos) => (this.alunos = alunos));
+    if (this.professorId) {
+      this.$http
+        .get(this.urlAluno + "/?professor.id=" + this.professorId)
+        .then((res) => res.json())
+        .then((alunos) => (this.alunos = alunos));
+    } else {
+      this.$http
+        .get(this.urlAluno)
+        .then((res) => res.json())
+        .then((alunos) => (this.alunos = alunos));
+    }
   },
   props: {},
   methods: {
@@ -63,7 +71,7 @@ export default {
         sobrenome: "",
       };
       this.$http
-        .post(this.url, _aluno)
+        .post(this.urlAluno, _aluno)
         .then((res) => res.json())
         .then((alunoRetornado) => {
           this.alunos.push(alunoRetornado);
@@ -71,7 +79,7 @@ export default {
         });
     },
     remover(aluno) {
-      this.$http.delete(`${this.url}/${aluno.id}`).then(() => {
+      this.$http.delete(`${this.urlAluno}/${aluno.id}`).then(() => {
         let indice = this.alunos.indexOf(aluno);
         this.alunos.splice(indice, 1);
       });
