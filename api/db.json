@@ -58,6 +58,24 @@
         "nome": "Silvana"
       },
       "id": 5
+    },
+    {
+      "nome": "Daniel",
+      "sobrenome": "",
+      "professor": {
+        "id": 2,
+        "nome": "Pedro"
+      },
+      "id": 6
+    },
+    {
+      "nome": "Raquel",
+      "sobrenome": "",
+      "professor": {
+        "id": 3,
+        "nome": "Silvana"
+      },
+      "id": 7
     }
   ]
 }
