@@ -18,6 +18,7 @@
       "id": 1,
       "nome": "Paulo",
       "sobrenome": "Alves",
+      "dataNasc": "01/02/2000",
       "professor": {
         "id": 1,
         "nome": "Gabriela"
@@ -27,6 +28,7 @@
       "id": 2,
       "nome": "Isadora",
       "sobrenome": "Ferreira",
+      "dataNasc": "01/02/2000",
       "professor": {
         "id": 1,
         "nome": "Gabriela"
@@ -36,6 +38,7 @@
       "id": 3,
       "nome": "Maria",
       "sobrenome": "Fernanda",
+      "dataNasc": "01/02/2000",
       "professor": {
         "id": 2,
         "nome": "Pedro"
@@ -44,6 +47,7 @@
     {
       "nome": "Joana",
       "sobrenome": "",
+      "dataNasc": "01/02/2000",
       "professor": {
         "id": 1,
         "nome": "Gabriela"
@@ -53,6 +57,7 @@
     {
       "nome": "Carlos",
       "sobrenome": "",
+      "dataNasc": "01/02/2000",
       "professor": {
         "id": 3,
         "nome": "Silvana"
@@ -62,6 +67,7 @@
     {
       "nome": "Daniel",
       "sobrenome": "",
+      "dataNasc": "01/02/2000",
       "professor": {
         "id": 2,
         "nome": "Pedro"
@@ -71,6 +77,7 @@
     {
       "nome": "Raquel",
       "sobrenome": "",
+      "dataNasc": "01/02/2000",
       "professor": {
         "id": 3,
         "nome": "Silvana"
