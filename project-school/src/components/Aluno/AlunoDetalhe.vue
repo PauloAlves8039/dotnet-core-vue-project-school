@@ -5,23 +5,36 @@
       <tbody>
         <tr>
           <td class="colPequeno">Matrícula:</td>
-          <td>{{ aluno.id }}</td>
+          <td>
+            <label>{{ aluno.id }}</label>
+          </td>
         </tr>
         <tr>
           <td>Nome:</td>
-          <td>{{ aluno.nome }}</td>
+          <td>
+            <label>{{ aluno.nome }}</label>
+            <input v-model="aluno.nome" type="text" />
+          </td>
         </tr>
         <tr>
           <td>Sobrenome:</td>
-          <td>{{ aluno.sobrenome }}</td>
+          <td>
+            <label>{{ aluno.sobrenome }}</label>
+            <input v-model="aluno.sobrenome" type="text" />
+          </td>
         </tr>
         <tr>
           <td>Data Nascimento</td>
-          <td>{{ aluno.dataNasc }}</td>
+          <td>
+            <label>{{ aluno.dataNasc }}</label>
+            <input v-model="aluno.dataNasc" type="text" />
+          </td>
         </tr>
         <tr>
           <td>Professor:</td>
-          <td>{{ aluno.professor.nome }}</td>
+          <td>
+            <label>{{ aluno.professor.nome }}</label>
+          </td>
         </tr>
       </tbody>
     </table>
