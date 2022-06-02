@@ -34,6 +34,15 @@
           <td>Professor:</td>
           <td>
             <label>{{ aluno.professor.nome }}</label>
+            <select v-model="aluno.professor">
+              <option
+                v-for="(professor, index) in professores"
+                :key="index"
+                v-bind:value="professor"
+              >
+                {{ professor.nome }}
+              </option>
+            </select>
           </td>
         </tr>
       </tbody>
@@ -50,9 +59,11 @@ export default {
   },
   data() {
     return {
-      aluno: {},
-      urlAluno: "http://localhost:3000/alunos",
       id: this.$route.params.id,
+      aluno: {},
+      professores: [],
+      urlAluno: "http://localhost:3000/alunos",
+      urlProfessor: "http://localhost:3000/professores",
     };
   },
   created() {
@@ -60,6 +71,11 @@ export default {
       .get(`${this.urlAluno}/${this.id}`)
       .then((res) => res.json())
       .then((aluno) => (this.aluno = aluno));
+
+    this.$http
+      .get(this.urlProfessor)
+      .then((res) => res.json())
+      .then((professor) => (this.professores = professor));
   },
   methods: {},
 };
