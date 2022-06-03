@@ -10,28 +10,28 @@
           </td>
         </tr>
         <tr>
-          <td>Nome:</td>
+          <td class="colPequeno">Nome:</td>
           <td>
             <label>{{ aluno.nome }}</label>
             <input v-model="aluno.nome" type="text" />
           </td>
         </tr>
         <tr>
-          <td>Sobrenome:</td>
+          <td class="colPequeno">Sobrenome:</td>
           <td>
             <label>{{ aluno.sobrenome }}</label>
             <input v-model="aluno.sobrenome" type="text" />
           </td>
         </tr>
         <tr>
-          <td>Data Nascimento</td>
+          <td class="colPequeno">Data Nascimento</td>
           <td>
             <label>{{ aluno.dataNasc }}</label>
             <input v-model="aluno.dataNasc" type="text" />
           </td>
         </tr>
         <tr>
-          <td>Professor:</td>
+          <td class="colPequeno">Professor:</td>
           <td>
             <label>{{ aluno.professor.nome }}</label>
             <select v-model="aluno.professor">
@@ -82,4 +82,21 @@ export default {
 </script>
 
 <style scoped>
+.colPequeno {
+  width: 20%;
+  text-align: right;
+  background-color: rgb(125, 217, 245);
+  font-weight: bold;
+}
+input,
+select {
+  margin: 0px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  font-family: Montserrat;
+  border-radius: 5px;
+  border: 1px solid silver;
+  background-color: rgb(245, 245, 245);
+  width: 95%;
+}
 </style>
