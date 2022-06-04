@@ -1,6 +1,9 @@
 <template>
   <div>
-    <titulo :texto="`Aluno: ${aluno.nome}`" />
+    <titulo :texto="`Aluno: ${aluno.nome}`" :btnVoltar="false">
+      <button class="btn btnEditar">Editar</button>
+    </titulo>
+
     <table>
       <tbody>
         <tr>
@@ -82,6 +85,10 @@ export default {
 </script>
 
 <style scoped>
+.btnEditar {
+  float: right;
+  background-color: rgb(76, 186, 249);
+}
 .colPequeno {
   width: 20%;
   text-align: right;

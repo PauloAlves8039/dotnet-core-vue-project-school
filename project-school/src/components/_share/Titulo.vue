@@ -1,6 +1,15 @@
 <template>
   <div>
-    <h1>{{ texto }}</h1>
+    <div style="display: flex; width: 50%">
+      <h1>{{ texto }}</h1>
+      <div class="voltar">
+        <slot>
+          <button v-show="btnVoltar" class="btn btnVoltar" @click="voltar()">
+            Voltar
+          </button>
+        </slot>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -8,9 +17,24 @@
 export default {
   props: {
     texto: String,
+    btnVoltar: Boolean,
+  },
+  methods: {
+    voltar() {
+      this.$router.back();
+    },
   },
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.voltar {
+  width: 50px;
+  position: absolute;
+  margin-top: 15px;
+}
+.btnVoltar {
+  float: right;
+  background-color: rgb(199, 199, 199);
+}
 </style>
