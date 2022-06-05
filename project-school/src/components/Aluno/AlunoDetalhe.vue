@@ -1,9 +1,8 @@
 <template>
   <div>
-    <titulo :texto="`Aluno: ${aluno.nome}`" :btnVoltar="false">
+    <titulo :texto="`Aluno: ${aluno.nome}`" :btnVoltar="true">
       <button class="btn btnEditar">Editar</button>
     </titulo>
-
     <table>
       <tbody>
         <tr>
@@ -62,7 +61,7 @@ export default {
   },
   data() {
     return {
-      id: this.$route.params.id,
+      idAluno: this.$route.params.id,
       aluno: {},
       professores: [],
       urlAluno: "http://localhost:3000/alunos",
@@ -71,7 +70,7 @@ export default {
   },
   created() {
     this.$http
-      .get(`${this.urlAluno}/${this.id}`)
+      .get(`${this.urlAluno}/${this.idAluno}`)
       .then((res) => res.json())
       .then((aluno) => (this.aluno = aluno));
 

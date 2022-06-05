@@ -3,11 +3,10 @@
     <div style="display: flex; width: 50%">
       <h1>{{ texto }}</h1>
       <div class="voltar">
-        <slot>
-          <button v-show="btnVoltar" class="btn btnVoltar" @click="voltar()">
+        <slot></slot>
+        <button v-show="btnVoltar" class="btn btnVoltar" @click="voltar()">
             Voltar
           </button>
-        </slot>
       </div>
     </div>
   </div>
@@ -29,7 +28,7 @@ export default {
 
 <style scoped>
 .voltar {
-  width: 50px;
+  width: 50%;
   position: absolute;
   margin-top: 15px;
 }

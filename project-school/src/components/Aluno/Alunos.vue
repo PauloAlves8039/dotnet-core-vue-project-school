@@ -58,7 +58,7 @@ export default {
       titulo: "Aluno",
       nome: "",
       professorId: this.$route.params.prof_id,
-      professor: [],
+      professor: {},
       alunos: [],
       urlAluno: "http://localhost:3000/alunos",
       urlProfessor: "http://localhost:3000/professores",
