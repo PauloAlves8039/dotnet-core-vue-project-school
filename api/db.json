@@ -18,7 +18,7 @@
       "id": 1,
       "nome": "Paulo",
       "sobrenome": "Alves",
-      "dataNasc": "01/02/2000",
+      "dataNasc": "08/04/1990",
       "professor": {
         "id": 1,
         "nome": "Gabriela"
@@ -45,44 +45,34 @@
       }
     },
     {
-      "nome": "Joana",
-      "sobrenome": "",
-      "dataNasc": "01/02/2000",
-      "professor": {
-        "id": 1,
-        "nome": "Gabriela"
-      },
-      "id": 4
-    },
-    {
+      "id": 5,
       "nome": "Carlos",
-      "sobrenome": "",
-      "dataNasc": "01/02/2000",
+      "sobrenome": "Ferreira",
+      "dataNasc": "10/05/1989",
       "professor": {
         "id": 3,
         "nome": "Silvana"
-      },
-      "id": 5
+      }
     },
     {
+      "id": 6,
       "nome": "Daniel",
-      "sobrenome": "",
-      "dataNasc": "01/02/2000",
+      "sobrenome": "Fonseca",
+      "dataNasc": "14/09/1997",
       "professor": {
         "id": 2,
         "nome": "Pedro"
-      },
-      "id": 6
+      }
     },
     {
+      "id": 7,
       "nome": "Raquel",
-      "sobrenome": "",
-      "dataNasc": "01/02/2000",
+      "sobrenome": "Soares",
+      "dataNasc": "19/11/1998",
       "professor": {
         "id": 3,
         "nome": "Silvana"
-      },
-      "id": 7
+      }
     }
   ]
 }

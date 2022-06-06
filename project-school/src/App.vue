@@ -52,6 +52,7 @@ html {
 }
 
 .btn_Danger {
+  font-size: 0.8em !important;
   background-color: #fa4430;
 }
 
@@ -60,6 +61,7 @@ html {
   color: white;
   padding: 10px 20px;
   cursor: pointer;
+  font-size: 1.5em;
   border: 1px solid #000;
   border-radius: 5px;
   border-bottom: 3px solid black;
