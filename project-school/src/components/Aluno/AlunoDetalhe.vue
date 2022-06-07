@@ -134,6 +134,7 @@ export default {
   text-align: right;
   background-color: rgb(125, 217, 245);
   font-weight: bold;
+  
 }
 input,
 select {
