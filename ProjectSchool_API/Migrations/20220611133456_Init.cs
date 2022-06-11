@@ -41,6 +41,36 @@ namespace ProjectSchool_API.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "Professores",
+                columns: new[] { "Id", "Nome" },
+                values: new object[] { 1, "Vinicius" });
+
+            migrationBuilder.InsertData(
+                table: "Professores",
+                columns: new[] { "Id", "Nome" },
+                values: new object[] { 2, "Paula" });
+
+            migrationBuilder.InsertData(
+                table: "Professores",
+                columns: new[] { "Id", "Nome" },
+                values: new object[] { 3, "Luna" });
+
+            migrationBuilder.InsertData(
+                table: "Alunos",
+                columns: new[] { "Id", "DataNasc", "Nome", "ProfessorId", "Sobrenome" },
+                values: new object[] { 1, "01/05/2000", "Maria", 1, "José" });
+
+            migrationBuilder.InsertData(
+                table: "Alunos",
+                columns: new[] { "Id", "DataNasc", "Nome", "ProfessorId", "Sobrenome" },
+                values: new object[] { 2, "25/06/1999", "João", 2, "Paulo" });
+
+            migrationBuilder.InsertData(
+                table: "Alunos",
+                columns: new[] { "Id", "DataNasc", "Nome", "ProfessorId", "Sobrenome" },
+                values: new object[] { 3, "11/07/1980", "Lucas", 3, "Machado" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Alunos_ProfessorId",
                 table: "Alunos",
