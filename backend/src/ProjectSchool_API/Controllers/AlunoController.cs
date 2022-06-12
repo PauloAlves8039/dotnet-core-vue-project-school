@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace ProjectSchool_API.Controllers
 {
@@ -14,31 +16,66 @@ namespace ProjectSchool_API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-           return Ok();
+            try
+            {
+                return Ok();
+            } 
+            catch (Exception) 
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falhou");
+            }
         }
 
         [HttpGet("{AlunoId}")]
         public IActionResult Get(int AlunoId)
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falhou");
+            }
         }
 
         [HttpPost]
         public IActionResult Post()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falhou");
+            }
         }
 
         [HttpPut("{AlunoId}")]
         public IActionResult Put(int AlunoId)
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falhou");
+            }
         }
 
         [HttpDelete("{AlunoId}")]
         public IActionResult Delete(int AlunoId)
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, "Banco de Dados Falhou");
+            }
         }
     }
 }
