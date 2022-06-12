@@ -14,7 +14,7 @@ namespace ProjectSchool_API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok();
+           return Ok();
         }
 
         [HttpGet("{AlunoId}")]
