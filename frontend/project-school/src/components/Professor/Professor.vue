@@ -23,7 +23,11 @@
         </tr>
       </tbody>
       <tfoot v-else>
-        Nenhum Professor Encontrado
+        <tr>
+          <td colspan="3" style="text-align: center">
+            <h5>Nenhum Professor Encontrado</h5>
+          </td>
+        </tr>
       </tfoot>
     </table>
   </div>
@@ -40,8 +44,8 @@ export default {
     return {
       Professores: [],
       Alunos: [],
-      urlProfessor: "http://localhost:3000/professores",
-      urlAluno: "http://localhost:3000/alunos",
+      urlProfessor: "http://localhost:5000/api/professor",
+      urlAluno: "http://localhost:5000/api/aluno",
     };
   },
   created() {

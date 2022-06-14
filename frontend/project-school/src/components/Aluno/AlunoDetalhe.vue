@@ -76,8 +76,8 @@ export default {
       professores: [],
       idAluno: this.$route.params.id,
       visualizando: true,
-      urlAluno: "http://localhost:3000/alunos",
-      urlProfessor: "http://localhost:3000/professores",
+      urlAluno: "http://localhost:5000/api/aluno",
+      urlProfessor: "http://localhost:5000/api/professor",
     };
   },
   created() {

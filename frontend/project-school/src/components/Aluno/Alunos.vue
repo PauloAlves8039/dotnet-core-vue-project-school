@@ -40,7 +40,11 @@
         </tr>
       </tbody>
       <tfoot v-else>
-        Nenhum Aluno Encontrado
+        <tr>
+          <td colspan="3" style="text-align: center">
+            <h5>Nenhum Aluno Encontrado</h5>
+          </td>
+        </tr>
       </tfoot>
     </table>
   </div>
@@ -60,15 +64,15 @@ export default {
       professorId: this.$route.params.prof_id,
       professor: {},
       alunos: [],
-      urlAluno: "http://localhost:3000/alunos",
-      urlProfessor: "http://localhost:3000/professores",
+      urlAluno: "http://localhost:5000/api/aluno",
+      urlProfessor: "http://localhost:5000/api/professor",
     };
   },
   created() {
     if (this.professorId) {
       this.carregarProfessores();
       this.$http
-        .get(this.urlAluno + "/?professor.id=" + this.professorId)
+        .get(`${this.urlAluno}/ByProfessor/${this.professorId}`)
         .then((res) => res.json())
         .then((alunos) => (this.alunos = alunos));
     } else {
