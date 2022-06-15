@@ -39,11 +39,11 @@
           <td class="colPequeno">Professor:</td>
           <td>
             <label v-if="visualizando">{{ aluno.professor.nome }}</label>
-            <select v-else v-model="aluno.professor">
+            <select v-else v-model="aluno.professor.id">
               <option
                 v-for="(professor, index) in professores"
                 :key="index"
-                v-bind:value="professor"
+                v-bind:value="professor.id"
               >
                 {{ professor.nome }}
               </option>
@@ -95,17 +95,19 @@ export default {
     editar() {
       this.visualizando = !this.visualizando;
     },
-    salvar(_aluno){
+    salvar(_aluno) {
       let _alunoEditar = {
         id: _aluno.id,
         nome: _aluno.nome,
-        sobrenome:_aluno.sobrenome,
-        dataNasc:_aluno.dataNasc,
-        professor:_aluno.professor
+        sobrenome: _aluno.sobrenome,
+        dataNasc: _aluno.dataNasc,
+        professorId: _aluno.professor.id
       }
 
       this.$http
-        .put(`${this.urlAluno}/${_alunoEditar.id}`,_alunoEditar);
+        .put(`${this.urlAluno}/${_alunoEditar.id}`,_alunoEditar)
+        .then(res => res.json())
+        .then((aluno) => (this.aluno = aluno));
         
       this.visualizando = !this.visualizando;
     },
