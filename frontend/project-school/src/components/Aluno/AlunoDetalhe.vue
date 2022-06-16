@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!loading">
     <titulo :texto="`Aluno: ${aluno.nome}`" :btnVoltar="!visualizando">
       <button v-show="visualizando" class="btn btnEditar" @click="editar()">
         Editar
@@ -78,20 +78,31 @@ export default {
       visualizando: true,
       urlAluno: "http://localhost:5000/api/aluno",
       urlProfessor: "http://localhost:5000/api/professor",
+      loading: true
     };
   },
   created() {
-    this.$http
-      .get(`${this.urlAluno}/${this.idAluno}`)
-      .then((res) => res.json())
-      .then((aluno) => (this.aluno = aluno));
-
-    this.$http
-      .get(this.urlProfessor)
-      .then((res) => res.json())
-      .then((professor) => (this.professores = professor));
+    this.carregarProfessor();
   },
   methods: {
+    carregarProfessor() {
+      this.$http
+        .get(this.urlProfessor)
+        .then((res) => res.json())
+        .then((professor) => {
+          (this.professores = professor);
+          this.carrgearAluno();
+        });
+    },
+    carrgearAluno() {
+      this.$http
+        .get(`${this.urlAluno}/${this.idAluno}`)
+        .then((res) => res.json())
+        .then((aluno) => {
+          (this.aluno = aluno);
+          this.loading = false;
+        });
+    },
     editar() {
       this.visualizando = !this.visualizando;
     },
@@ -107,7 +118,8 @@ export default {
       this.$http
         .put(`${this.urlAluno}/${_alunoEditar.id}`,_alunoEditar)
         .then(res => res.json())
-        .then((aluno) => (this.aluno = aluno));
+        .then((aluno) => (this.aluno = aluno))
+        .then(() => this.visualizando =true);
         
       this.visualizando = !this.visualizando;
     },
