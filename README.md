@@ -11,10 +11,17 @@ O código fonte do projeto foi baseado no curso [Seja Full-Stack com .NET Web AP
 - [Visual Studio Code v1.45.1](https://code.visualstudio.com/)
 - [Vue CLI v3.4.0](https://cli.vuejs.org/)
 - [.NET 2.2](https://dotnet.microsoft.com/en-us/download/dotnet/2.2)
+- [SQLite](https://www.sqlite.org/index.html)
 
 ## :floppy_disk: Clonar Repositório
 
 `git clone https://github.com/PauloAlves8039/dotnet-core-vue-project-school.git`
+
+## :camera: Screenshots
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-core-vue-project-school/blob/master/frontend/project-school/src/assets/img/screenshot1.png" /></p>
+
+<p align="center"> <img src="https://github.com/PauloAlves8039/dotnet-core-vue-project-school/blob/master/frontend/project-school/src/assets/img/screenshot2.png" /></p>
 
 ## Author
 
