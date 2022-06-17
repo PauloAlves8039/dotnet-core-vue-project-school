@@ -88,10 +88,8 @@ export default {
       let _aluno = {
         nome: this.nome,
         sobrenome: "",
-        professor: {
-          id: this.professor.id,
-          nome: this.professor.nome,
-        },
+        dataNasc: "",
+        professorId: this.professor.id,
       };
       this.$http
         .post(this.urlAluno, _aluno)
