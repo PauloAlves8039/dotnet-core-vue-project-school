@@ -5,7 +5,7 @@
         professorId != undefined
           ? 'Professor: ' + professor.nome
           : 'Todos os Alunos'
-      "
+      " btnVoltar="true"
     />
     <div v-if="professorId != undefined">
       <input

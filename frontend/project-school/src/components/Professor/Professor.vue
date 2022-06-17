@@ -1,6 +1,6 @@
 <template>
   <div>
-    <titulo texto="Professor" />
+    <titulo texto="Professor" btnVoltar="true" />
     <table>
       <thead>
         <th>Cód.</th>
