@@ -10,7 +10,9 @@ O código fonte do projeto foi baseado no curso [Seja Full-Stack com .NET Web AP
 
 - [Visual Studio Code v1.45.1](https://code.visualstudio.com/)
 - [Vue CLI v3.4.0](https://cli.vuejs.org/)
-- [.NET 2.2](https://dotnet.microsoft.com/en-us/download/dotnet/2.2)
+- [Vue Router v3.5.4](https://router.vuejs.org/guide/)
+- [.NET Core 2.2](https://dotnet.microsoft.com/en-us/download/dotnet/2.2)
+- [Entity Framework Core v2.2.0](https://docs.microsoft.com/pt-br/ef/core/).
 - [SQLite](https://www.sqlite.org/index.html)
 
 ## :floppy_disk: Clonar Repositório
