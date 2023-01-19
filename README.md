@@ -3,7 +3,7 @@
 Repositório de uma aplicação web para gerenciar dados em uma escola, implementando um CRUD com listas de professores e seus respectivos alunos.
 
 
-O código fonte do projeto foi baseado no curso [Seja Full-Stack com .NET Web API e Angular + EF Core - V2.0
+O código fonte do projeto foi baseado no curso [Seja Full-Stack com Vue JS + ASP.NET Core Web API + EF Core
 ](https://www.udemy.com/course/fullstack-vuejs-dotnetcore-efcore/).
 
 ## :wrench: Recursos Utilizados
